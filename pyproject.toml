@@ -1,0 +1,25 @@
+[project]
+name = "ebb"
+authors = [{name = "Robert James Hernandez", email = "publicxz+ebb@pm.me"},]
+description = "Monitor of Winlink RMS"
+readme = "README.md"
+# dynamic metadat: https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata
+dynamic = ["version"]
+
+[tool.setuptools]
+# Explicitly set the python src or autodiscover will be confused
+# by modules dir for nixosModules
+packages = ["ebb"]
+
+[project.scripts]
+ebb = "ebb.cli:main"
+
+[build-system]
+# Minimum requirements for the build system to execute.
+requires = ["setuptools", "wheel"]  # PEP 508 specifications.
+
+[tool.setuptools.dynamic]
+version = {attr = "ebb.__version__"}
+
+[tool.black]
+line-length = 120
