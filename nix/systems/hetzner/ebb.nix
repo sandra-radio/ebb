@@ -69,6 +69,9 @@ in
       ${ebb}/bin/ebb --config=/root/.ebb.rc update NJ6R
       ${ebb}/bin/ebb --config=/root/.ebb.rc update WA6BGS-10
       ${ebb}/bin/ebb --config=/root/.ebb.rc update W6RDX-10
+      ${ebb}/bin/ebb --config=/root/.ebb.rc update N4ARY
+      ${ebb}/bin/ebb --config=/root/.ebb.rc update WX4PCH-10
+      ${ebb}/bin/ebb --config=/root/.ebb.rc update N3BYR
       ${ebb}/bin/ebb --config=/root/.ebb.rc publish
     '';
     serviceConfig = {
