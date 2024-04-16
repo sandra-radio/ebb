@@ -1,5 +1,5 @@
 from h2o_wave import data, site, ui
-
+from datetime import datetime
 
 def go(conn):
     page = site['/']
@@ -13,14 +13,13 @@ def go(conn):
 
     page['example'] = ui.plot_card(
         box='1 1 8 8',
-        title='SoCal Winlink Heatmap',
+        title='Winlink Heatmap (Updated: {})'.format(datetime.now().astimezone().strftime("%m-%d-%YT%H:%M:%S %Z")),
         data=data('callsign day mail', len(mail_results), rows=mail_results),
 
         plot=ui.plot([ui.mark(type='polygon',
                               x='=day',
-                              #x_scale='time-category',
-                              #x='={{intl day weekday="short" }}',
                               y="=callsign",
+                              y_title='RMS',
                               color='=mail',
                               color_range='#fee8c8 #fdbb84 #e34a33')])
     )
