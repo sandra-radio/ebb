@@ -3,6 +3,7 @@ from datetime import datetime
 
 def go(conn):
     page = site['/']
+    page['meta'] = ui.meta_card(box='', title='EBB Heatmap')
 
     cursor = conn.cursor()
     # Get last week of entries
