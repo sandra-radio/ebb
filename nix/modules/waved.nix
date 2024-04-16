@@ -28,6 +28,8 @@ in
         serviceConfig = {
           Type = "simple";
           ExecStart = "${wavedPkg}/bin/waved2";
+          Restart = "on-failure";
+          RestartSec = "3s";
         };
       };
   };
