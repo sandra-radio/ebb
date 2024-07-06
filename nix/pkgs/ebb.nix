@@ -17,6 +17,10 @@ python3.pkgs.buildPythonApplication {
     python3.pkgs.pythonRelaxDepsHook
   ];
 
+  buildInputs = [
+    python3.pkgs.setuptools
+  ];
+
   propagatedBuildInputs = [
     python3.pkgs.requests
     python3.pkgs.docopt-ng
