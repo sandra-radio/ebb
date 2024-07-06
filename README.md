@@ -31,4 +31,16 @@ to my QTH and one known good RMS, it would be helpful to see the status of other
 
 ## Deployment
 
-Currently running `NixOS 23.11` on a Hetzner VPS in the DC: `hil-dc1`
+Currently running `NixOS 24.05` on a Hetzner VPS in the DC: `hil-dc1`
+
+Initial bootstrap from ubuntu VM:
+
+```
+nix run github:nix-community/nixos-anywhere -- --flake .#hetzner root@<address>
+```
+
+Updating:
+
+```
+nixos-rebuild --flake .#hetzner --target-host root@<address> switch
+```
