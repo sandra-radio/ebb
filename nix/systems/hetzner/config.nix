@@ -26,6 +26,8 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMEiESod7DOT2cmT2QEYjBIrzYqTDnJLld1em3doDROq"
   ];
 
+  services.fail2ban.enable = true;
+
   #system.stateVersion = config.system.nixos.version;
   system.stateVersion = "25.05";
 }
