@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     agenix = {
@@ -24,7 +24,7 @@
     {
       packages.x86_64-linux = rec {
         h2o_wave = pkgs.callPackage ./nix/pkgs/wave.nix { };
-        wave = pkgs.callPackage ./nix/pkgs/waved.nix { };
+        wave = pkgs.callPackage ./nix/pkgs/waved.nix { inherit wave; };
         ebb = pkgs.callPackage ./nix/pkgs/ebb.nix { inherit h2o_wave; };
       };
 
